@@ -11,7 +11,7 @@ public class Maze
     private char me='z';
     private char exit='$';
     private char visited='.';
-
+    private boolean solved=false;
     public void delay(int n){
 	try{
 	    Thread.sleep(n);
@@ -58,28 +58,58 @@ public class Maze
     }
     //path finding alg step1
     public void solve(int x, int y){
-	if (board[x][y]==wall || board[x][y]==me || board[x][y]==visited){
+	if (board[x][y]==wall || board[x][y]==me || board[x][y]==visited
+	    ||solved){
 	    return;
 	}
 	if (board[x][y]==exit){
 	    System.out.println(this);
-	    System.exit(0); // exit not good cant do anything with path
+	    solved=true;
+	    //System.exit(0); // exit not good cant do anything with path
 	}
-	delay(500);
+	delay(100);
 	System.out.println(this);
 	board[x][y]=me;
 	solve(x+1,y);
 	solve(x-1,y);
 	solve(x,y+1);
 	solve(x,y-1);
+	if (!solved){
 	board[x][y]=visited;
-	  
+	}
     }
     public static void main(String[] args){
 	Maze m = new Maze();
-	System.out.println(m);
 	System.out.println(m);
 	m.solve(1,1);
     }
 }
 
+//path finding alg
+//search alg
+//blind search
+//doesn't know where going
+//depth first search(linear search)(backtracking)(this)
+//try go down as far down as it can on one path before going back
+//depth better if no clue about where at all
+//breath first search look one unit in all directions then two...
+//breath better if solution shallow, nearby
+
+//state space search
+//state is state of the world
+//possible configuration of the world
+//state space diagram all possible states and transitions
+//alg try get transition from start to end state
+//each solve = different state
+
+//graph - collection of node and edges
+//node contain stuf
+//edge connects nodes together
+
+//state space diagram = graph
+//can be slow
+//
+//huristic search
+//guideline
+//help lead to solution faster
+//in maze goto step closer to exit
