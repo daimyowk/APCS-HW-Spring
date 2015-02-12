@@ -113,3 +113,12 @@ public class Maze
 //guideline
 //help lead to solution faster
 //in maze goto step closer to exit
+
+//rubic cube one finishing state
+//chess many finishing states
+//min max make sure go down worst branch
+//alpha beta pruning
+//eliminate certain trees to spend more time on another
+//
+//implicit data structure
+//
