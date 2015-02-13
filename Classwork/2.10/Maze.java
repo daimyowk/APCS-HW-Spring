@@ -122,3 +122,6 @@ public class Maze
 //
 //implicit data structure
 //
+//knights
+//out of bounds
+//numbers make ugly
