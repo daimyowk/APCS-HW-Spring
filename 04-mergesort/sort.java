@@ -8,12 +8,12 @@ public class sort{
 	ArrayList<Integer> b=new ArrayList<Integer>(data.subList(data.size()/2+1,data.size()));
 	ArrayList<Integer> r1=mergesort( a);
 	ArrayList<Integer> r2=mergesort( b);
-	if (a.size()==1 && b.size()==1){
+	/*if (a.size()==1 && b.size()==1){
 	    return merge(r1,r2);
 	}
 	else 
-	return mergesort(merge(r1,r2));
-	//return merge(r1,r2);
+	return mergesort(merge(r1,r2));*/
+	return merge(r1,r2);
     }
     public ArrayList<Integer> merge(ArrayList<Integer> a, ArrayList<Integer> b){
 	ArrayList<Integer> result = new ArrayList<Integer>();
