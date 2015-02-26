@@ -33,7 +33,7 @@ public class knights{
 	//return result;
     }
     public void solve(int x, int y){
-        if (solved||board[x][y]=="#"||board[x][y]=="x"|| !(board[x][y]=="O")){
+        if (solved|| !(board[x][y]=="O")){
 	    
 	    return;
 	}
