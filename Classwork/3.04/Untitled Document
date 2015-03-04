@@ -1,0 +1,28 @@
+isort n^2
+ssort n^2
+two for loops each n
+everytime double, do 4 times more work
+
+binary sort
+go half way, if number looking for higher than middle, use 2nd half
+or use 1st if otherwise
+lg base 2 of n runtime
+
+mergesort
+every time double dataset, only 1 extra level
+log base 2 of n level for data set of size n
+go through n items each level going down n times (spliting)
+(merging) going up n items again n times
+2n*lg base2 n time
+or
+n*lg base 2 n time
+gets slower much slower
+divide and conquer
+
+big O notation
+-ignore math dont really matter
+function f(x) is said to be O(g(x))
+order g(x) or Big O(g(x))
+if there exists some constant k such that kg(x)> f(x) over the long term
+upper bound
+worst case 
