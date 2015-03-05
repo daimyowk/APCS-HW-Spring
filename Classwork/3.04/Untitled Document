@@ -3,7 +3,7 @@ ssort n^2
 two for loops each n
 everytime double, do 4 times more work
 
-binary sort
+binary search
 go half way, if number looking for higher than middle, use 2nd half
 or use 1st if otherwise
 lg base 2 of n runtime
@@ -26,3 +26,16 @@ order g(x) or Big O(g(x))
 if there exists some constant k such that kg(x)> f(x) over the long term
 upper bound
 worst case 
+
+k
+logn
+n
+nlogn
+n^2
+2^n
+n!
+
+select(kth,L,start,end)
+select pivot value
+rearrange list such that all values left of pivot is < and right >
+change (K,L,start,end) start and end  to reflect side of list
