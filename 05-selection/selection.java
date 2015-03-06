@@ -31,6 +31,29 @@ public class selection{
 	 
 	    
     }
+    /* notes
+       3,8,16,4,6,2,5,9,7,12
+       L and H are limits for selection like binary search
+       starts with them at 0 and a.length-1
+       L or H change in each recursive call
+       1.select pivot value
+        shoule A[L];
+       2.no create new array
+       move pivot value to end
+       6 a[4]
+       swap A[H] and A[Pi]
+       3. Li=L, Hi=H-1
+       4.While Hi>Li
+       if A[Li]<P {Li++}
+       if A[Li]>P {swap A[Li] and A[Hi] then H-- DO NOT MODIFY LI BECAUSE
+       NOT CHECKED
+       eventually Hi=Li;
+       use if to check the element at Hi/Li
+       if A[Li] >P{swap A[Li] with A[Pi]  update Pi}
+       else swap A[Li++] with A[Pi] update Pi
+
+       if k==Pi {DONE}
+       else select (A,K,0,Pi-1) or (A,K,Pi+1,Hi)
     public static void main(String args[]){
 	selection test= new selection();
 	int[] b = new int[]{2,4,1,3,12};
