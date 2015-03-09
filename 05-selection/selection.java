@@ -53,15 +53,58 @@ public class selection{
        else swap A[Li++] with A[Pi] update Pi
 
        if k==Pi {DONE}
-       else select (A,K,0,Pi-1) or (A,K,Pi+1,Hi)
+       else select (A,K,0,Pi-1) or (A,K,Pi+1,Hi)*/
+    public void swap(int[] data,int place1, int place2){
+	int holder1=data[place1];
+	int holder2=data[place2];
+	data[place2]=holder1;
+	data[place1]=holder2;
+    }
+    public int select(int[] A, int k, int l, int h){
+	int high=h-1;
+	int low=l;
+	int pI = l;
+	int pivot=A[pI];       
+	swap(A,pI,h);
+	pI=h;
+	while (high>low){
+	    if (A[low]<pivot){
+		low++;
+	    }
+	    if (A[low]>pivot){
+		swap(A,low,high);
+		high--;
+	    }
+	}       
+	if (A[low]>pivot){
+	    swap(A,low,pI);
+	    pI=low;
+	}
+	else if (A[low]<pivot){  
+	    swap(A,low+1,pI);
+	    pI=low+1;
+	}
+	if (k==pI){
+	    return A[k];
+	}
+	else if (k<pI){
+	    select(A,k,0,pI-1);
+	}
+	else {
+	    
+	    select(A,k,pI+1,h);
+	}
+	return A[k];
+    }
     public static void main(String args[]){
 	selection test= new selection();
-	int[] b = new int[]{2,4,1,3,12};
-	int[] result= test.pivot(b,0,4);
+	int[] b = new int[]{2,4,1,3,12,5,9};
+	/*	int[] result= test.pivot(b,0,4);
       	for (int x=0;x<result.length;x++){
 	    System.out.print(result[x]+",");
 	    
         }
-	    System.out.println();
+	System.out.println();*/
+	System.out.println(test.select(b,4,0,b.length-1));
     }
 }
