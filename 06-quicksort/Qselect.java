@@ -1,0 +1,108 @@
+import java.util.*;
+import java.io.*;
+public class Qselect{
+    private int[] a,b;
+    Random rnd = new Random();
+    public Qselect(){
+	this(20);
+    }
+    public Qselect(int n){
+	Random r = new Random();
+	a = new int[n];
+	for (int i = 0; i < a.length; i++) {
+	    a[i] = r.nextInt(100);
+	}
+    }
+
+    public String toString(){
+	return Arrays.toString(a);
+    }
+
+    public int partition(int[] a, int l, int r) {
+	int tmp;
+	//int pivotIndex = l+rnd.nextInt(r-l);
+	int pivotIndex=l;
+	int pivot = a[pivotIndex];
+	tmp = a[r];
+	a[r] = a[pivotIndex];
+	a[pivotIndex]=tmp;
+				
+	int wall=l;
+	int pcount=1;
+	for (int i=l;i<r;i++) {
+	    if (a[i]<pivot) {
+		tmp = a[i];
+		a[i]=a[wall];
+		a[wall]=tmp;
+		wall++;
+		//bringing it to the front
+	    }
+	    if (a[i]==pivot)
+		pcount++;
+	    //not used
+	}
+	// now copy over all the pivots
+	int rwall=wall;
+	// rwall is start of all elements larger than pivot
+	tmp = a[rwall];
+	a[wall]=a[r];
+	a[r]=tmp;
+	rwall++;
+	//makes pivot right after wall
+	//	System.out.println(Arrays.toString(a));
+	for (int i=rwall+1;i<=r;i++) {
+	    if (a[i]==pivot) {
+		tmp = a[rwall];
+		a[rwall]=a[i];
+		a[i]=tmp;
+		rwall++;
+		//brigning all pivots together after all small values
+		//thus making everything after pivots larger
+	    }
+	}
+	return (wall+rwall)/2;
+    }
+
+		
+		
+    public int[]  qsort(int[] a, int k, int l, int h){
+	int pi,pval;
+	if (l>=h){
+	    return a;
+	}
+	pi = partition(a,l,h);
+	pval = a[pi];
+	
+	/*if (k==pi)
+	    return pval;
+	else if (k > pi)
+	    return qselect(a,k,pi+1,h);
+	else
+	return qselect(a,k,l,pi-1);*/
+	//System.out.println(Arrays.toString(a));
+	  qsort(a,k,pi+1,h);
+	  qsort(a,k,l,pi-1);
+	  // System.out.println(Arrays.toString(a));
+	  return a;
+    }
+		
+    public String select(){
+	b = Arrays.copyOf(a,a.length);
+	//int[] result= qselect(b,1,0,b.length-1);
+	return Arrays.toString(qsort(b,1,0,b.length-1));
+	}
+		
+    public static void main(String[] args) {
+	Qselect q = new Qselect();
+	System.out.println(q);
+	/*	for (int i=0;i<5;i++) {
+	    System.out.print(q.select(i)+" ");
+	    }*/
+	System.out.println(q.select());
+	System.out.println();
+	//	Arrays.sort(q.a);
+				
+	//	System.out.println(q.Arrays.toString(b));
+
+    }
+}
