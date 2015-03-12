@@ -1,11 +1,12 @@
 public class node{
     private String data;
     private node next;
-    public Node(String s){
+    public node(String s){
 	data=s;
+	next=null;
     }
     public void setData(String s){
-	data=s
+	data=s;
     }
     public String getData(){
 	return data;
