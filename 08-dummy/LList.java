@@ -52,4 +52,7 @@ public class LList{
 	return value;
 		
     }
+    public boolean remove(int i){
+	
+    }
 }
