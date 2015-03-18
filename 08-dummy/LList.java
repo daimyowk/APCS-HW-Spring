@@ -1,8 +1,8 @@
 public class LList{
     private int length=0;
-    private Node l=new Node("");
+    private Node l=new Node(0);
 
-    public void add(String s){
+    public void add(int s){
 	Node tmp=new Node(s);
 	tmp.setNext(l.getNext());
 	l.setNext(tmp);
@@ -18,10 +18,10 @@ public class LList{
 	s = s + "null";
 	return s;
     }
-    public String get(int n){
+    public int get(int n){
 	Node tmp=l;
 	if (n>length){
-	    return "list too small";
+	    return 00000;
 	}
 	for(int x=0;x<n+1;x++){
 	    tmp=tmp.getNext(); 
@@ -29,7 +29,7 @@ public class LList{
 	return tmp.getData();
     }
     
-    public void add(int n, String s){
+    public void add(int n, int s){
 	Node tmp=l;
 	for (int x=0;x<n;x++){
 	    tmp=tmp.getNext();
@@ -39,15 +39,17 @@ public class LList{
 	tmp.setNext(stuff);
 	length++;
     }
-    public void remove(int n){
+    public int remove(int n){
 	Node tmp=l;
 	for(int x=0;x<n;x++){
 	    tmp=tmp.getNext();
 	}
 	Node stuff=new Node(tmp.getNext().getNext().getData());
 	stuff.setNext(tmp.getNext().getNext().getNext());
+	int value=tmp.getNext().getData();
 	tmp.setNext(stuff);
 	length--;
+	return value;
 		
     }
 }
