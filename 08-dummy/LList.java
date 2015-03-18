@@ -39,4 +39,15 @@ public class LList{
 	tmp.setNext(stuff);
 	length++;
     }
+    public void remove(int n){
+	Node tmp=l;
+	for(int x=0;x<n;x++){
+	    tmp=tmp.getNext();
+	}
+	Node stuff=new Node(tmp.getNext().getNext().getData());
+	stuff.setNext(tmp.getNext().getNext().getNext());
+	tmp.setNext(stuff);
+	length--;
+		
+    }
 }

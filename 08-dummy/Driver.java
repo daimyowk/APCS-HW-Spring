@@ -12,5 +12,7 @@ public class Driver{
 	System.out.println(l.get(9));
 	l.add(2,"yo");
 	System.out.println(l);
+	l.remove(2);
+	System.out.println(l);
     }
 }
