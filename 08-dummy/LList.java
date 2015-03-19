@@ -52,7 +52,19 @@ public class LList{
 	return value;
 		
     }
-    public boolean remove(int i){
-	
+    public boolean remove2(int i){
+	Node tmp=l.getNext();
+	for(int x=0;x<length;x++){
+	    if (tmp.getData()==i){
+		this.remove(x);
+		return true;
+	    }
+	    tmp=tmp.getNext();
+	}
+	return false;
+	    
+    }
+    public int size(){
+	return length;
     }
 }
