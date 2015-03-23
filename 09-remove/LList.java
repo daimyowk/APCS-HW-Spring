@@ -17,9 +17,15 @@ public class LList<E> implements Iterable<E>{
 		
     public void add(E s){
 	Node<E> tmp = new Node<E>(s);
+	
 	tmp.setNext(l.getNext());
+	if (l.getNext()!=null){
+	l.getNext().setPrev(tmp);
+	}
+	else 
+	    tmp.setPrev(l);
 	l.setNext(tmp);
-    }
+            }
 		
     public String toString(){
 	String s = "";
