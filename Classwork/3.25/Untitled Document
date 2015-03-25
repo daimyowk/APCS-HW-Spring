@@ -1,0 +1,12 @@
+first in first out
+FIFO
+ex. line, Queue
+
+q.endqueue(x); adds x to back of queue
+q.dequeue();  removes and return item in front of queue
+q.head(); return but no remove front of queue
+q.front(); return but no remove front of queue
+	  cant pop then push like stack
+q.empty();
+q.size();
+keep track of front and end to keep endqueue and dequeue to be constant
