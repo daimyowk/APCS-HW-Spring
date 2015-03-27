@@ -1,0 +1,18 @@
+front back null
+
+empty
+if back=null(true)
+
+
+enqueue (E data)
+yes back.setNext(tmp);
+    back=tmp
+
+not tmp.setNext(back);
+    tmp=back;
+
+dqueue
+if front null
+   back null
+retvalue = front.getdata
+front=front.getnext
