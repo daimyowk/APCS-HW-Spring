@@ -1,0 +1,64 @@
+depth first search - try one direction all the way until cant
+      	    	   then another diection
+used 2d array 
+recursion
+previous locations saved/stored on call stack
+
+another way - breath first search
+like radiating out
+1 step in all directions
+2 step in all directions
+n step in all directions
+
+try use while
+    B
+    C
+D E A F G H
+    U
+    J K L
+
+letters represent x,y coors
+
+frontier
+A
+current
+--------------------
+frontier
+CEIF
+
+Current 
+A
+---------------
+frontier
+EFIB
+
+Current
+C
+---------------
+frontier
+FIBD
+
+Current
+E
+
+Processed
+ACE
+----------------
+
+
+
+place start node on frontier
+mark it processed
+while (!frontier.empty() )
+current = remove first node from frontier
+if (
+mark current as visited
+for each unprocessed neighbor N of current 
+mark N as processed 
+and add n to frontier
+frontier is a queue FIFO
+
+
+if frontier stack = depth first 
+
+need node with x and y
