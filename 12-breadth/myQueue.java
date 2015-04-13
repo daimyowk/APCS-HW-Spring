@@ -6,7 +6,11 @@ public class myQueue<E>{
 	end=dummy;
     }
     public boolean empty(){
-	return dummy==end;
+        if (dummy.getNext()==null){
+	    return true;
+	}
+	else
+	    return false;
     }
     public void enqueue(E data){
 	Node<E> stuff = new Node<E>(data);
@@ -15,6 +19,10 @@ public class myQueue<E>{
     }
     public E dequeue(){
 	E tmp = dummy.getNext().getData();
+	if (dummy.getNext().getNext()==null){
+	    dummy.setNext(null);
+	    return tmp;
+	}
 	dummy.setNext(dummy.getNext().getNext());
 	return tmp;
     }

@@ -70,39 +70,62 @@ public class Maze
 	board[x][y]='.';
 	if (!(board[x+1][y]==wall) || !(board[x+1][y]==visited)){
 	    coor tmp= new coor(x+1,y);
+	    tmp.setPrev(current);
 	    frontier.enqueue(tmp);
 	}
 	if (!(board[x-1][y]==wall) || !(board[x-1][y]==visited)){
 	    coor tmp= new coor(x-1,y);
+	    tmp.setPrev(current);
 	    frontier.enqueue(tmp);
 	}
 	if (!(board[x][y+1]==wall) || !(board[x+1][y+1]==visited)){
 	    coor tmp= new coor(x,y+1);
+	    tmp.setPrev(current);
 	    frontier.enqueue(tmp);
 	}
 	if (!(board[x][y-1]==wall) || !(board[x][y-1]==visited)){
 	    coor tmp= new coor(x,y-1);
+	    tmp.setPrev(current);
 	    frontier.enqueue(tmp);
 	}
+	System.out.println(frontier);
 	while (!frontier.empty()){
+	    System.out.println(this);
+	    
+	    //System.out.println();
+	    // System.out.println(frontier);
 	    current=frontier.dequeue();
+	    //System.out.println(current);
+	    if (board[current.getx()][current.gety()]=='$'){
+		coor holder=current.getPrev();
+		while(holder.getx()!=x || holder.gety()!=y){
+		    board[holder.getx()][holder.gety()]='X';
+		    holder=holder.getPrev();
+		}
+		break;
+	    }
 	    board[current.getx()][current.gety()]='.';
-	    if ((current.getx()<maxX)&&(!(board[current.getx()+1][current.gety()]==wall) || !(board[current.getx()+1][current.gety()]==visited))){
+	    if ((current.getx()<maxX-1)&&(!(board[current.getx()+1][current.gety()]==wall) && !(board[current.getx()+1][current.gety()]==visited)&& !(board[current.getx()+1][current.gety()]=='.'))){
 		coor tmp= new coor(current.getx()+1,current.gety());
+	        tmp.setPrev(current);
 		frontier.enqueue(tmp);
 	    }
-	    if ((current.getx()>0)&&(!(board[current.getx()-1][current.gety()]==wall) || !(board[current.getx()-1][current.gety()]==visited))){
+	    if ((current.getx()>0)&&(!(board[current.getx()-1][current.gety()]==wall) && !(board[current.getx()-1][current.gety()]==visited)&& !(board[current.getx()-1][current.gety()]=='.'))){
 		coor tmp= new coor(current.getx()-1,current.gety());
+	        tmp.setPrev(current);
 		frontier.enqueue(tmp);
 	    }
-	    if ((current.gety()<maxY)&&(!(board[current.getx()][current.gety()+1]==wall) || !(board[current.getx()][current.gety()+1]==visited))){
+	    if ((current.gety()<maxY-1)&&(!(board[current.getx()][current.gety()+1]==wall) && !(board[current.getx()][current.gety()+1]==visited)&& !(board[current.getx()][current.gety()+1]=='.'))){
 		coor tmp= new coor(current.getx(),current.gety()+1);
+	        tmp.setPrev(current);
 		frontier.enqueue(tmp);
 	    }
-	    if ((current.gety()>0)&&(!(board[current.getx()][current.gety()-1]==wall) || !(board[current.getx()][current.gety()-1]==visited))){
+	    if ((current.gety()>0)&&(!(board[current.getx()][current.gety()-1]==wall) && !(board[current.getx()][current.gety()-1]==visited)&& !(board[current.getx()][current.gety()-1]=='.'))){
 		coor tmp= new coor(current.getx(),current.gety()-1);
+	        tmp.setPrev(current);
 		frontier.enqueue(tmp);
 	    }
+	    
 	}
 	
     }
@@ -110,7 +133,7 @@ public class Maze
     public static void main(String[] args){
 	Maze m = new Maze();
 	System.out.println(m);
-        m.solve(1,1);
+	m.solve(1,1);
 	System.out.println(m);
 		
     }
