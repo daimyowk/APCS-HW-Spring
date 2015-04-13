@@ -62,3 +62,6 @@ frontier is a queue FIFO
 if frontier stack = depth first 
 
 need node with x and y
+
+put xy on frontier 
+while frontier not empty do stuff
