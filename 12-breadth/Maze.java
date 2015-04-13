@@ -91,7 +91,7 @@ public class Maze
 	System.out.println(frontier);
 	while (!frontier.empty()){
 	    System.out.println(this);
-	    
+	    delay(200);
 	    //System.out.println();
 	    // System.out.println(frontier);
 	    current=frontier.dequeue();
