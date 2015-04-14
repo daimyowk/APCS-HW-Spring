@@ -1,0 +1,24 @@
+blind search
+breadth first try more and gets one of best path
+depth try less but not best path
+
+heuristic search
+has frontier
+pick where to place neighbors in frontier
+based on which closest
+
+best first search (heuristic search)
+makes estimate of what best to do
+frontier is a priority queue
+things are removed based on their priority 
+  insert in order based on priority
+  remove from front
+   or 
+   inserat at end
+   remove by seraching for most priority
+priority is a simple to compute value that hope get ot exit quickly
+ex euclidean distance root of x2+y2
+   manhattan distance/ taxicab x+y
+
+A* search (heuristic)
+priority/cost = cost to get to here + estimate to goal
