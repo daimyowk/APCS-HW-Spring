@@ -13,9 +13,13 @@ public class Node {
 	this.exitx=exitx;
 	this.exity=exity;
 	priority = Math.sqrt(Math.abs(exitx-x)+Math.abs(exity-y));
+	//priority = Math.abs(exitx-x)+Math.abs(exity-y);
     }
     public double getPriority(){
 	return priority;
+    }
+    public void setPriority(double n){
+	priority=n;
     }
     public Node getPrev() {
 	return prev;

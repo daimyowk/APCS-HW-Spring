@@ -110,6 +110,16 @@ public class Maze
 	}
 						
     }
+    public void StaraddToFront(int tx,int ty, Node current, double step){
+	Node tmp = null;
+	if (board[tx][ty]=='#' || board[tx][ty]=='$'){
+	    tmp = new Node(tx,ty,exitx,exity);
+	    tmp.setPrev(current);
+	    tmp.setPriority(tmp.getPriority()+step);
+	    f.add(tmp);
+	}
+						
+    }
     
     public void bestfirst(int x, int y){
 	f = new Frontier();
@@ -145,12 +155,47 @@ public class Maze
 	    System.out.println(this);
 	}
     }
+    public void astar(int x, int y){
+	f = new Frontier();
+	//f = new StackFront();
+	double step=1.0;
+	f.add(new Node(x,y,exitx,exity));
+
+	int tx=0,ty=0;
+	Node current = null;
+	while (!f.isEmpty()){
+	    current = f.remove();
+	    int cx = current.getX();
+	    int cy = current.getY();
+
+	    if (board[cx][cy]=='$')
+		break;
+						
+	    board[cx][cy]='z';
+
+	    StaraddToFront(cx+1,cy,current,step);
+	    StaraddToFront(cx-1,cy,current,step);
+	    StaraddToFront(cx,cy+1,current,step);
+	    StaraddToFront(cx,cy-1,current,step);
+
+	    delay(50);
+	    System.out.println(this);
+	    step=step+1.0;
+	}
+
+	// path recovery
+	for (Node p = current.getPrev(); p != null ; p = p.getPrev()){
+	    board[p.getX()][p.getY()] = 'P';
+	    delay(100);
+	    System.out.println(this);
+	}
+    }
    
 		
     public static void main(String[] args){
 	Maze m = new Maze();
 	System.out.println(m);
-	m.bestfirst(1,1);
+	m.astar(1,1);
 	System.out.println(m);
 		
     }
