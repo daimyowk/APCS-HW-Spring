@@ -1,0 +1,35 @@
+graphs
+-collection of nodes and edges
+(vertex)node - holds stuff
+edge - connects nodes
+connected components 
+cycle graph
+get at least one node back to self without repeating
+Acyclic graph
+
+weights- assoicated value to edge
+
+Dykter's algrithm 
+used for gps
+
+directed graph
+only able to go in certain directions 
+
+DAG
+directed acycle graph
+
+restriction on graphs -  TREES
+empty or acycle graph with one node designated as root
+root-starting point
+child-connected to and 1 level down from its parent node
+leaf- node with zero children
+path - sequence of nodes and or edges connecting two nodes
+ancestors - parents' parents anynodes from you up to root
+desencends - any node on subtree
+siblings - children of the same parent
+height - length of longest route 
+fullness - tree with max number of nodes
+balance 
+
+Binary Tree
+each node has 0,1,2 children
