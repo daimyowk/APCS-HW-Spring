@@ -33,3 +33,40 @@ balance
 
 Binary Tree
 each node has 0,1,2 children
+
+Binary Search Tree
+
+given value v in any node n, all values in n's left subtree are less than v
+all the values in the n's right subtree is greater tahn v
+public node search (node t, int i){
+       while (t!=null){
+       t2=t
+       int c =t.getdata().compareto(i);
+       if (c==0){
+       return t;
+       }
+       else if (c>0){
+       t=t.getleft
+       }
+       else
+       t=t.getright
+       }
+       return null
+}
+
+insert 
+node n = new node(i);
+     if (T==null){
+     t=n
+     return
+}
+insert as new leaf
+use search with piggyback pointer
+set t to root
+search for n but use a piggy back poointer t2 to follow t
+
+t to root
+t2 to  rooot
+
+t2 now points to new nodes parent
+insert new node to left or right of t2 as approiate 
