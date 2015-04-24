@@ -19,4 +19,7 @@ public class node{
     public node getLeft(){
 	return left;
     }
-]
+    public int getData(){
+	return data;
+    }
+}
