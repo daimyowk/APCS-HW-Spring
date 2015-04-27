@@ -24,7 +24,7 @@ public class binaryT{
 	return null;
 	}
     public String search(int i){
-	Node retval = search(r,i);
+	Node retval = search(root,i);
 	if (retval==null)
 	    return "Not Found";
 	else
@@ -68,7 +68,7 @@ public class binaryT{
 	}
     }
     public String toString(){
-	return traverse(r);
+	return traverse(root);
 	/*	System.out.println(root.getData());
 	System.out.println(root.getLeft().getData());
 	System.out.println(root.getRight().getData());
