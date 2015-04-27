@@ -24,7 +24,7 @@ public class binaryT{
 	return null;
 	}
     public String search(int i){
-	Node retval = search(root,i);
+	node retval = search(root,i);
 	if (retval==null)
 	    return "Not Found";
 	else
