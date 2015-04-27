@@ -64,7 +64,7 @@ public class binaryT{
 	    return "";
 	}
 	else{
-	    return t+"/n"+traverse(t.getLeft())+traverse(t.getRight());
+	    return t+"\n"+traverse(t.getLeft())+traverse(t.getRight());
 	}
     }
     public String toString(){
