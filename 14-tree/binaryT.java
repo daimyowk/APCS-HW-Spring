@@ -23,7 +23,13 @@ public class binaryT{
 	}
 	return null;
 	}
-	    
+    public String search(int i){
+	Node retval = search(r,i);
+	if (retval==null)
+	    return "Not Found";
+	else
+	    return ""+retval;
+    }	    
 		    
 
 
@@ -52,33 +58,18 @@ public class binaryT{
 	else
 	    before.setRight(n);
     }
-	/*	if (thing.getLeft()==null && thing.getData()>i){
-	    thing.setLeft(n);
-	}
-	else
-	    thing.setRight(n);
-	    return;*/
 
-    
+    public String traverse(node t){
+	if (t==null){
+	    return "";
+	}
+	else{
+	    return t+"/n"+traverse(t.getLeft())+traverse(t.getRight());
+	}
+    }
     public String toString(){
-	String s;
-        /*ArrayList<node> prevlevel = new ArrayList<node>();
-	s=s+root.getData()+"\n";
-	holder=root;
-	while(!level.empty()){
-	    ArrayList<node> level = new ArrayList<node>();
-	    s=s+holder.getLeft().getData()+"  ";
-	    s=s+holder.getRight().getData()+"  ";
-	node holder=root;
-	ArrayList<node> level = new ArrayList<node>();
-	while(!(holder.getRight()=null && holder.getLeft()=null)){
-	    s=s+"left:"+holder.getLeft()+"  ";
-	    s=s+"right:"+holder.getRight()+"   ";
-	    level.add(holder.getLeft());
-	    level.add(holder.getRight());
-	    holder=level.get(0);
-	    level.remove(0);*/
-	System.out.println(root.getData());
+	return traverse(r);
+	/*	System.out.println(root.getData());
 	System.out.println(root.getLeft().getData());
 	System.out.println(root.getRight().getData());
 	System.out.println();
@@ -89,7 +80,7 @@ public class binaryT{
 	System.out.println("  "+root.getRight().getData());
 	System.out.println(root.getRight().getLeft().getData()+" "+root.getRight().getRight().getData());
 	return "done";
-					   
+	*/		   
 	}
 	
 }
