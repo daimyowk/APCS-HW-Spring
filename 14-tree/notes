@@ -1,0 +1,26 @@
+public node search(node t,int i){
+       if (t==null||t.getData()==i)
+       	  return t;
+	else if (t.getData()<i){
+	     return search(t.getRight(),i);
+	else
+		return search (t.getLeft(),i);
+}
+
+public node search(i){
+       String retval = search(r,i);
+       if (retvall==null){
+       	  return "NOt FOUND";
+	  }
+	else 
+	return ""+retval;
+}
+
+public String toString(){
+       return traverse(r);
+}
+
+public String traverse(Node t){
+       //base case if (t==null) return ""
+       //
+}
