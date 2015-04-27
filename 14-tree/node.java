@@ -22,4 +22,8 @@ public class node{
     public int getData(){
 	return data;
     }
+    public String toString(){
+	String s=""+this.getData();
+	return s;
+    }
 }
