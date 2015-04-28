@@ -2,6 +2,9 @@ import java.io.*;
 import java.util.*;
 public class binaryT{
     private node root;
+    ArrayList<node> lineup = new ArrayList<node>();
+    private double limit=0.0;
+    private double power=0.0;
     public binaryT(node root){
 	this.root = root;
     }
@@ -60,14 +63,48 @@ public class binaryT{
     }
 
     public String traverse(node t){
+        
 	if (t==null){
-	    return "";
-	}
+	    //lineup.remove(0);
+	    // System.out.println(lineup);
+	    /*
+	    for (int x=0;x<lineup.size();x++){
+		System.out.println(x);
+		if(lineup.get(x)==null){
+		    lineup.remove(lineup.get(x));
+		}
+		traverse(lineup.get(x));
+		/*if (!(x==null)){
+		    traverse(x);
+		}
+		else
+		return " ";*/
+	    return " ";
+			
+	    }
+	    
+	    
+	
 	else{
-	    return t+"\n"+traverse(t.getLeft())+traverse(t.getRight());
-	}
+	    lineup.add(lineup.get(0).getLeft());
+	    lineup.add(lineup.get(0).getRight());
+	    //System.out.println(lineup);
+	    limit++;
+	    if (limit==Math.pow(2.0,power)){
+		power++;
+		return "\n  "+lineup.remove(0)+traverse(lineup.get(0))+"";
+		
+	    }
+	    else
+	    return "  "+lineup.remove(0)+traverse(lineup.get(0))+"  ";
+	    //return t+"\n"+traverse(t.getLeft())+traverse(t.getRight())+"\n";
+	    }
+	
+	
     }
     public String toString(){
+	
+	lineup.add(root);
 	return traverse(root);
 	/*	System.out.println(root.getData());
 	System.out.println(root.getLeft().getData());

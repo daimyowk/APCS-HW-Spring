@@ -9,10 +9,13 @@ public class Driver{
 	test.insert(use,13);
 	test.insert(use,11);
 	test.insert(use,15);
+        
+	
 	//System.out.println(test);
-	System.out.println(test.search(use,13));
-	System.out.println(test.search(use,17));
-	System.out.println(test.search(use,13).getRight());
+	//System.out.println(test.search(use,13));
+	//	System.out.println(test.search(use,17));
+	//System.out.println(test.search(use,13).getRight());
+	System.out.println(test.search(use,15).getLeft());
 	System.out.println(test);
     }
 }
