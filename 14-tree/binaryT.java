@@ -80,7 +80,7 @@ public class binaryT{
 	
 	}
     }
-    public remove(int i){
+    public void remove(int i){
 	node t = root;
 	node before=null;
 	while (t!=null){
