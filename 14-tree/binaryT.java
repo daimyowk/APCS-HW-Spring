@@ -86,7 +86,7 @@ public class binaryT{
 	    
 	
 	else{
-	    lineup.add(lineup.get(0).getLeft());
+	    /* lineup.add(lineup.get(0).getLeft());
 	    lineup.add(lineup.get(0).getRight());
 	    //System.out.println(lineup);
 	    limit++;
@@ -98,9 +98,12 @@ public class binaryT{
 	    else
 	    return "  "+lineup.remove(0)+traverse(lineup.get(0))+"  ";
 	    //return t+"\n"+traverse(t.getLeft())+traverse(t.getRight())+"\n";
-	    }
+	    }*/
+	   return traverse(t.getLeft())+t.getData()+", "+traverse(t.getRight());
+		
 	
 	
+	}
     }
     public String toString(){
 	

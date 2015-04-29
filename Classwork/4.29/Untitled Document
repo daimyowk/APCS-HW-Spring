@@ -1,0 +1,24 @@
+remove for binarytree
+use search part of insert to get a pointer t to the node we want to remove and
+t2 to its parent (insert searches untill null, we stop when t.getData()==
+thing to delete)
+leaf easiest
+root plus middle hardest
+
+2a t is a leaf
+     point t2's left or right to null 
+
+2b t only has one child 
+     point t2 left or right to t's only nonnull child
+
+2a and 2b can be combined
+2c t has two children
+     find largest on left subtree or smallest on right subtree
+     l=t.getleft
+     while l.getright()!=null
+     	   l=l.getright
+
+     copy data in l to t
+
+     remove t.getleft(),l.getData
+     since will onyl have one child or none
