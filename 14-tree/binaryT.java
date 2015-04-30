@@ -87,6 +87,9 @@ public class binaryT{
 	    Integer holder=new Integer(t.getData());
 	    Integer holder2=new Integer(i);
 	    int c = holder.compareTo(holder2);
+	    if (c==0){
+		break;
+	    }
 	    if (c>0){
 		before=t;
 		t=t.getLeft();
@@ -98,11 +101,27 @@ public class binaryT{
 	        
 	    }
 	}
+	//	System.out.println(t.getData());
 	if (t.getRight()==null && before.getData()>i){
 	    before.setLeft(t.getLeft());
 	}
-	else if(t.getRight()==null){
+	else if (t.getRight()==null && before.getData()<i){
 	    before.setRight(t.getLeft());
+	}
+	else if(t.getLeft()==null && before.getData()<i){
+	    before.setRight(t.getRight());
+	}
+	else if(t.getLeft()==null && before.getData()>i){
+	    before.setLeft(t.getRight());
+	}
+	else {
+	    node l=t.getLeft();
+	    while (l.getRight()!=null){
+		l=l.getRight();
+	    }
+	    
+	    this.remove(l.getData());
+	    t.setData(l.getData());
 	}
     }
     public String toString(){

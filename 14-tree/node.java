@@ -22,6 +22,9 @@ public class node{
     public int getData(){
 	return data;
     }
+    public void setData(int i){
+	data=i;
+    }
     public String toString(){
 	String s=""+this.getData();
 	return s;

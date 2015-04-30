@@ -15,7 +15,18 @@ public class Driver{
 	//System.out.println(test.search(use,13));
 	//	System.out.println(test.search(use,17));
 	//System.out.println(test.search(use,13).getRight());
-	System.out.println(test.search(use,15).getLeft());
+	System.out.println(test.search(use,10).getLeft());
+	System.out.println(test);
+	//test.remove(15);
+	//System.out.println(test);
+	//test.remove(13);
+	//	System.out.println(test);
+	//	test.remove(4);
+	// test.remove(5);
+	//System.out.println(test.search(use,10).getLeft().getLeft());
+	test.remove(10);
+	System.out.println(test.search(use,6).getLeft());
+	System.out.println(test.search(use,6).getRight());
 	System.out.println(test);
     }
 }
