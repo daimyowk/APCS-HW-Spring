@@ -1,0 +1,14 @@
+		Array		Linked List	binarysearchtree
+search		n		n      		lgn if tree full or balanced
+		lgn(bin search			n if degenerates into list
+		and sorted)	
+remove		n   		1 if have ptr	same as search
+				n
+insert		n		remove		same as search
+
+tranverse	n		n		n number nodes of n
+
+redblack tree
+2-3 tree 
+b tree
+splay tree
