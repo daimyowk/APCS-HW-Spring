@@ -1,0 +1,14 @@
+numnode in binary tree
+
+base case 0 if tree is nul
+
+reduction 1+numnode(left)+numnode(right)
+
+public int numNode(node t){
+       if t==null
+       return 0
+       else
+       return 1+numnode(t.getLeft())+numnode(t.getRight())
+}
+
+for sum replace 1 with t.getvalue()
