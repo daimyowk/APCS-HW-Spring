@@ -1,0 +1,42 @@
+		3
+         /		\
+	8		15
+      /   \            /   \
+    12     10        18     25
+   /  \   / 
+  36  19 11
+
+MIN HEAP
+binary tree
+all childs larger than parent
+as full as possible left to right
+
+min value always the root
+findmin() O(1)
+removemin(){
+	1.pull off root
+	2 moev lowest rightest to root
+	3.pushdown(root)
+	while node is greater than either child swap with smaller
+	child adn work down tree
+Ologn
+
+heapsort
+Onlogn
+
+insert
+add new node to lowest leftest poisition
+then use sift up
+like shift down but going uppppppppppppppp
+Ologn
+
+create do n inserrts
+Onlogn
+
+given node n 
+n's children
+    2n, 2n+1
+parnet are node (n/2)
+
+array
+12 14 15 19 25 18 16 66==34=6
