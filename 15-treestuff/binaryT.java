@@ -97,6 +97,12 @@ public class binaryT{
         
 	
     }
+    /*
+      if t =null
+      0
+      else
+      return 1+ max(height(left,right));
+     */
     public int height(node t){
 	findheight(t);
 	return height;
@@ -122,6 +128,12 @@ public class binaryT{
 	int a = height(t.getLeft());
 	int b = height(t.getRight());
 	return a+b-1;
+	/*
+	  path1=height(t.getleft())+ height (t.getright())+2
+	  path2= longest(t.getleft());
+	  path3=longest(t.right());
+	  return max of (path1,path2,path3);
+	 */
     }
     public static void main(String[] args){
 	binaryT t = new binaryT();
