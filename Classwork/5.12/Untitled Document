@@ -40,3 +40,27 @@ parnet are node (n/2)
 
 array
 12 14 15 19 25 18 16 66==34=6
+--------------------------------
+start at bottom of heap/array
+for (i=end of arry to 0 pushdown a[i])
+
+put nonheap above two heaps rebuilds heap
+can build in linear time
+o(n)
+
+sorting is O(nlogn) in place  done in array
+swap root with lowest leftest node
+then pushdown
+
+used in priority queues
+
+reducekey
+finds a node 
+updates priority and move in queue if needed
+linear
+
+keep heeps same size or off by 1
+two heeps one min one max
+to find median
+
+
