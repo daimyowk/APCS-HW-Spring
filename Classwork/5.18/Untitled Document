@@ -1,0 +1,59 @@
+students with id 
+add student by ID
+retrieve by ID
+change student after looking up by Id
+all constant
+3k students in 10k spots
+index = studentID
+some numbers not used
+use subtraction to save some space
+
+wont work for osis numbers
+
+to make work look at last 4 digits of osis
+work if no multiple studenst with last 4 digits
+
+hashing/hash tables
+want to store data in table(array) by some unique ID
+
+hash functino is a mapping that takes id and converts it into
+a table index
+ex. id is osis#
+    h(x)=x%10000
+    better: h(x)= multiply all the non zero digits in x % 10000 
+    always end with %tables size
+    
+fast efficent constant time
+but has problems
+when multiple IDs hash to same table index, have collision or clash
+
+hash table must be large enought that it is sparesly populated
+only if perfect hash function, no need extra space
+need good hash function that distributes IDs all over the array
+
+(dictionaries in python = hash tables)
+
+abe
+97 98 101
+
+h=1;
+for (i=0 to length(s)))
+	h=h*3+int(s.charAt(i))
+return h%tablesize
+
+3 is prime number
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
