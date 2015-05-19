@@ -42,6 +42,57 @@ for (i=0 to length(s)))
 return h%tablesize
 
 3 is prime number
+can sub 3 with a prime number
+
+hashtable must be sparse if full then collision
+
+closed hashing
+everything is stored in table(array)
+
+collisions:
+1. rehashing - have secondary hash function
+ 		easy but just delaying problem
+		harder to get stuff back now
+
+2. linear probing - if spot full just use next aviable spot
+			no problem if table large and sparse
+			bad if table small and not sparse
+			creates mess
+2 902
+3 703
+4 403
+5 605
+6 302
+
+3. leave extra room in tables by using a multiplier in hash function:
+ h(x) = x%100 * 3 
+then linear probe, better a bit
+makes table big and sparse
+
+insert expected o(1) if everything right
+	worst case o(n)
+
+retrival
+	expected o(1)
+	worst case o(n)
+
+delete  ? more random
+search o(n) n size of table
+
+open hashing
+each array slot refers to a linked list that contains all elements that
+hash to that slot
+
+insert front of the linkedlist in the array; makes its fast and constant
+always constant o(1);
+
+retrival expected o(1);
+o(n) with respect to number of elements in the that certain spot; still fast 
+
+maps
+
+
+
 
 
 
