@@ -1,0 +1,18 @@
+weighted graphs
+different routes take different costs
+each edge has cost
+
+single source shortest path algorithm 
+Dijkstra's algorithm
+
+init: start node in solution set
+	use heap to store weights for A to every node
+	if no way then inifinity 
+
+1.grab node with lowest cost (n) and add to solution set
+2.for each node in heap
+	cost  = min(old costs)
+	look at every node see if can do better
+	cost to get to new node in soultion node + cost to get from
+	new node in solution set to this node
+
